@@ -1499,11 +1499,7 @@ class GraphReconstructor {
 	      auto v1 = srcNodeDistance2 + pathNodeDistance2 - dstNodeDistance2;
 	      auto v2 = 2.0 * srcNode[sni].distance * pathNode[pni].distance;
 	      auto cosAlpha = v1 / v2;
-	      if (cosAlpha > 1.0) cosAlpha = 1.0;
-	      if (cosAlpha < -1.0) cosAlpha = -1.0;
-	      auto alpha = acos(cosAlpha) * 180.0 / M_PI;
-	      if (alpha < 0.0) abort();
-	      if (alpha <= range) {
+	      if (cosAlpha >= range) {
 		break;
 	      }
 #else
