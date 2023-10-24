@@ -26,7 +26,7 @@
 #warning "*** OMP is *NOT* available! ***"
 #endif
 
-//#define NGT_SHORTCUT_REDUCTION_WITH_ANGLE
+#define NGT_SHORTCUT_REDUCTION_WITH_ANGLE
 #define NGT_SHORTCUT_REDUCTION_WITH_ADDITIONAL_CONDITION
 
 namespace NGT {
