@@ -526,8 +526,10 @@ void NGT::StorageBasedGraphConstructor::aggregate(std::string &indexPath, size_t
 	  ifs.read(reinterpret_cast<char*>(&len), sizeof(len));
 	}
 	if (id < from || id > to) {
-	  std::cerr << "Fatal error: out of range. " << id << ":" << from << "-" << to << std::endl;
-	  exit(1);
+	  std::cerr << "aggregate: Warning: out of range. " << id << ":" << from << "-" << to << std::endl;
+	  float v;
+	  ifs.read(reinterpret_cast<char*>(&v), sizeof(v));
+	  continue;
 	}
 	size_t idx = id - 1  - gid * nOfMembers;
 	if (idx >= nodes.size()) {
